@@ -245,7 +245,7 @@ func (rs RoutingStage) Exec(ctx context.Context, alerts ...*types.Alert) (contex
 	return s.Exec(ctx, alerts...)
 }
 
-// A MultiStage executes a series of stages sequencially.
+// A MultiStage executes a series of stages sequentially.
 type MultiStage []Stage
 
 // Exec implements the Stage interface.
