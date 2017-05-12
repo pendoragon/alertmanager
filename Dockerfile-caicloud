@@ -1,0 +1,8 @@
+FROM cargo.caicloud.io/caicloud/alertmanager:release-v0.4.2
+MAINTAINER shaolei <the.reason.sake@gmail.com>
+
+RUN apt-get update && apt-get install -yq inotify-tools
+ADD ./docker-entrypoint.sh ./auto-reload.sh /
+
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
+CMD        [ "-config.file=/etc/alertmanager/alertmanager.yml" ]

@@ -69,4 +69,9 @@ promu:
 proto:
 	scripts/genproto.sh
 
+caicloud: build
+	@echo ">> building docker image"
+	@docker build -t cargo.caicloud.io/caicloud/alertmanager:release-v0.6.2 .
+	@docker build -t cargo.caicloud.io/caicloud/alertmanager:v0.6.2 -f Dockerfile-caicloud .
+
 .PHONY: all style format build test vet assets tarball docker promu proto

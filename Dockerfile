@@ -1,4 +1,4 @@
-FROM        prom/busybox:latest
+FROM        cargo.caicloud.io/caicloud/debian:jessie
 MAINTAINER  The Prometheus Authors <prometheus-developers@googlegroups.com>
 
 COPY alertmanager               /bin/alertmanager
